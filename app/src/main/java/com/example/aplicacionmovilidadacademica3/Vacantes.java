@@ -27,7 +27,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
- public class Vacantes extends AppCompatActivity {
+ public class Vacantes extends AppCompatActivity  {
 
      RecyclerView recyclerView;
      List<Vacante> vacanteList;
@@ -123,6 +123,7 @@ private TextView tv_prueba;
                  }
                  PutDataIntoRecyclerView(vacanteList);
 
+
              }
 
              @Override
@@ -141,5 +142,8 @@ private TextView tv_prueba;
          VacanteAdapter vacanteAdapter = new VacanteAdapter(this,vacanteList);
          recyclerView.setLayoutManager(new LinearLayoutManager(this));
          recyclerView.setAdapter(vacanteAdapter);
+
      }
+
+
  }

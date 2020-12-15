@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AplicacionMovilidadAcademica3"
         android:usesCleartextTraffic="true">
+        <activity android:name=".VacanteDetalle"></activity>
         <activity android:name=".Requisito" />
         <activity android:name=".Solicitudes_Docentes" />
         <activity android:name=".Convocatorias" />
@@ -28,7 +29,6 @@
         <activity android:name=".Universidades" />
         <activity android:name=".Vacantes" />
         <activity android:name=".Menu" />
-        <activity android:name=".Gallery.VacanteGallery" />
     </application>
 
 </manifest>

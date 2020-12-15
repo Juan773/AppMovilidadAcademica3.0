@@ -1,5 +1,7 @@
 package com.example.aplicacionmovilidadacademica3.Models;
 
+import android.content.Intent;
+
 import java.io.Serializable;
 
 public class Vacante implements Serializable {
@@ -11,6 +13,7 @@ public class Vacante implements Serializable {
     public String contacto;
     public String imagen;
 
+
     public Vacante(Number idvacante, String uni_anfi, String fecha_inicio, String fecha_fin, String contacto, String imagen) {
         this.idvacante = idvacante;
         this.uni_anfi = uni_anfi;
@@ -18,6 +21,7 @@ public class Vacante implements Serializable {
         this.fecha_fin = fecha_fin;
         this.contacto = contacto;
         this.imagen = imagen;
+
     }
 
     public Number getIdvacante() {
@@ -67,5 +71,8 @@ public class Vacante implements Serializable {
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
+
+
+
 }
 

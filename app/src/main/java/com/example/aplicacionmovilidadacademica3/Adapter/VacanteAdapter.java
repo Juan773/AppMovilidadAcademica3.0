@@ -1,11 +1,16 @@
 package com.example.aplicacionmovilidadacademica3.Adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.media.TimedText;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.aplicacionmovilidadacademica3.Models.Vacante;
 import com.example.aplicacionmovilidadacademica3.R;
+import com.example.aplicacionmovilidadacademica3.VacanteDetalle;
 
 import java.util.List;
 
@@ -21,6 +27,16 @@ public class VacanteAdapter extends RecyclerView.Adapter<VacanteAdapter.VacanteV
     
        private Context vContext;
        private List<Vacante> vacanteList;
+       private OnItemClickListener mListener;
+
+
+
+       public interface OnItemClickListener{
+           void OnItemClick(int position);
+       }
+       public void setOnItemClickListener(OnItemClickListener listener){
+           mListener = listener;
+       }
 
 
     public VacanteAdapter(Context vContext, List<Vacante> vacanteList) {
@@ -41,13 +57,46 @@ public class VacanteAdapter extends RecyclerView.Adapter<VacanteAdapter.VacanteV
 
     @Override
     public void onBindViewHolder(@NonNull VacanteViewHolder holder, int position) {
-            final Vacante vac_item =vacanteList.get(position);
-        holder.uni.setText(vacanteList.get(position).getUni_anfi());
-        holder.inicio.setText(vacanteList.get(position).getFecha_inicio());
-        holder.fin.setText(vacanteList.get(position).getFecha_fin());
+             Vacante vacante = vacanteList.get(position);
 
-        Glide.with(vContext).asBitmap().load(vacanteList.get(position).getImagen()).into(holder.img);
+             String imageUrl = vacante.getImagen();
+             String unianf = vacante.getUni_anfi();
+             String feini = vacante.getFecha_inicio();
+             String fefin = vacante.getFecha_fin();
+             String conta = vacante.getContacto();
+        holder.uni.setText(unianf);
+        holder.inicio.setText(feini);
+        holder.fin.setText(fefin);
+        Glide.with(vContext).load(imageUrl).into(holder.img);
+        holder.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder= new AlertDialog.Builder(v.getRootView().getContext());
+                View dialogView = LayoutInflater.from(v.getRootView().getContext()).inflate(R.layout.activity_vacante_detalle,null);
+                ImageView image_detalle_vac1;
+                TextView tv_detalle_uni1;
+                TextView tv_fechaini1;
+                TextView tv_fechafin1;
+                TextView tv_contacto1;
+                image_detalle_vac1=dialogView.findViewById(R.id.image_detalle_vac);
+                tv_detalle_uni1=dialogView.findViewById(R.id.tv_detalle_uni);
+                tv_fechaini1=dialogView.findViewById(R.id.tv_fechaini);
+                tv_fechafin1=dialogView.findViewById(R.id.tv_fechafin);
+                tv_contacto1=dialogView.findViewById(R.id.tv_contacto);
+                Glide.with(vContext).load(vacante.getImagen()).into(image_detalle_vac1);
+                tv_detalle_uni1.setText(vacante.getUni_anfi());
+                tv_fechaini1.setText(vacante.getFecha_inicio());
+                tv_fechafin1.setText(vacante.getFecha_fin());
+                tv_contacto1.setText(vacante.getContacto());
 
+                builder.setView(dialogView);
+                builder.setCancelable(true);
+                builder.show();
+
+
+
+            }
+        });
 
     }
 
@@ -64,6 +113,7 @@ public class VacanteAdapter extends RecyclerView.Adapter<VacanteAdapter.VacanteV
         TextView fin;
         TextView contacto;
          ImageView img;
+        ImageView button;
 
         public VacanteViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -73,11 +123,20 @@ public class VacanteAdapter extends RecyclerView.Adapter<VacanteAdapter.VacanteV
             fin = itemView.findViewById(R.id.tv_fecha_fin);
             img = itemView.findViewById(R.id.imagen);
 
-            contacto = itemView.findViewById(R.id.contacto);
+            contacto = itemView.findViewById(R.id.tv_contacto);
+            button = itemView.findViewById(R.id.detalleboton);
 
 
-
-
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(mListener != null){
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION);
+                        mListener.OnItemClick(position);
+                    }
+                }
+            });
         }
     }
 }
