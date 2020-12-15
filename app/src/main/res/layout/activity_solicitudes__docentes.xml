@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
-    tools:context=".Solicitudes_Docentes">
+    tools:context=".Solicitudes_Docentes"
+    android:background="@drawable/fondo">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,12 +17,24 @@
 
             layout="@layout/main_toolbar"/>
         <TextView
+            android:layout_width="400dp"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingBottom="10dp"
+            android:text="Solicitudes Docentes"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/sol_doc_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Solicitudes Docentes"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:gravity="center"/>
+            android:scrollbars="vertical"
+
+            />
 
 
 

@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.aplicacionmovilidadacademica3">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AplicacionMovilidadAcademica3"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Solicitudes_Docentes"></activity>
+        <activity android:name=".Requisito" />
+        <activity android:name=".Solicitudes_Docentes" />
         <activity android:name=".Convocatorias" />
         <activity android:name=".Solicitudes_Alumnos" />
         <activity android:name=".Login">
@@ -20,9 +25,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Convenios" />
+        <activity android:name=".Universidades" />
         <activity android:name=".Vacantes" />
         <activity android:name=".Menu" />
+        <activity android:name=".Gallery.VacanteGallery" />
     </application>
 
 </manifest>

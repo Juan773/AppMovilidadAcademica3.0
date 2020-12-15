@@ -3,6 +3,8 @@ package com.example.aplicacionmovilidadacademica3;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -11,14 +13,44 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.aplicacionmovilidadacademica3.Adapter.ConvocatoriaAdapter;
+import com.example.aplicacionmovilidadacademica3.Interfaces.ConvocatoriaService;
+import com.example.aplicacionmovilidadacademica3.Models.Convocatoria;
+import com.example.aplicacionmovilidadacademica3.TokenReceive.api.WebServiceOauth;
+import com.example.aplicacionmovilidadacademica3.TokenReceive.share_pref.TokenManager;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import okhttp3.OkHttpClient;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class Convocatorias extends AppCompatActivity {
     DrawerLayout drawerLayout;
+    List<Convocatoria> convocatoriaList;
+    RecyclerView recyclerView;
+    private static final String BASE_URL = "http://192.168.0.101:8888";
+    private OkHttpClient.Builder httpClientBuilder;
+    private TokenManager tokenManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_convocatorias);
         drawerLayout = findViewById(R.id.drawer_layout);
+        recyclerView = findViewById(R.id.convo_recycler_view);
+        convocatoriaList = new ArrayList<>();
+        setUpView();
+
     }
+
+    private void setUpView() {
+        tokenManager = TokenManager.getInstance(getSharedPreferences(TokenManager.SHARED_PREFERENCES, MODE_PRIVATE));
+        getConvocatorias();
+    }
+
+
 
     public void ClickMenu(View view){
         openDrawer(drawerLayout);
@@ -47,7 +79,7 @@ public class Convocatorias extends AppCompatActivity {
         redirectActivity(this, Vacantes.class);
     }
     public void ClickConvenios(View view){
-        redirectActivity(this, Convenios.class);
+        redirectActivity(this, Universidades.class);
     }
     public void ClickSolAlumnos(View view ){ redirectActivity(this,Solicitudes_Alumnos.class);}
     public void ClickLogout(View view){
@@ -88,5 +120,37 @@ public class Convocatorias extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         closeDrawer(drawerLayout);
+    }
+    private void getConvocatorias() {
+        Call<List<Convocatoria>> call = WebServiceOauth
+                .getInstance()
+                .createService(ConvocatoriaService.class)
+                .getConvocatorias("Bearer"+ tokenManager.getToken().getAccessToken());
+        call.enqueue(new Callback<List<Convocatoria>>() {
+            @Override
+            public void onResponse(Call<List<Convocatoria>> call, Response<List<Convocatoria>> response) {
+                if(response.code() !=200){
+                    return;
+                }
+                List<Convocatoria> convocatorias = response.body();
+                for (Convocatoria convocatoria : convocatorias){
+                    convocatoriaList.add(convocatoria);
+                }
+                PutDataIntoRecyclerView(convocatoriaList);
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Convocatoria>> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void PutDataIntoRecyclerView(List<Convocatoria> convocatoriaList) {
+
+        ConvocatoriaAdapter convocatoriaAdapter = new ConvocatoriaAdapter(this,convocatoriaList);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(convocatoriaAdapter);
     }
 }

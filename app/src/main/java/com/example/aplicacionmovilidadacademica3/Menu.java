@@ -50,7 +50,7 @@ public class Menu extends AppCompatActivity {
         redirectActivity(this, Vacantes.class);
     }
     public void ClickConvenios(View view){
-        redirectActivity(this, Convenios.class);
+        redirectActivity(this, Universidades.class);
     }
     public void ClickLogout(View view){
         logout(this);

@@ -9,6 +9,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:layout_marginStart="0dp"
     android:background="@color/upeu"
     >
 
@@ -22,6 +23,7 @@
     <TextView
         android:layout_width="190dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
         android:text="davidreyna@upeu.edu.pe"
         android:textAlignment="center"
         android:textColor="#FFFF"
@@ -33,38 +35,40 @@
 
 
     <LinearLayout
-        android:layout_width="247dp"
+        android:paddingTop="15dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:paddingLeft="15dp"
         android:onClick="ClickVacantes"
-        android:orientation="horizontal">
-
+        >
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="1dp"
-            android:src="@drawable/ic_vacante"
-          />
+            android:rotation="0"
+            android:src="@drawable/ic_vacante"/>
 
         <TextView
-            android:layout_width="135dp"
+            android:layout_width="199dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="6dp"
             android:layout_weight="1"
-            android:padding="12dp"
+            android:padding="1dp"
             android:text="Vacantes"
-            android:textColor="@color/black"
-
-           />
+            android:textColor="@color/black" />
 
 
     </LinearLayout>
     <LinearLayout
+        android:paddingTop="15dp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:paddingLeft="15dp"
         android:onClick="ClickConvenios"
         >
 
@@ -72,23 +76,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="1dp"
+            android:rotation="0"
             android:src="@drawable/ic_conveni" />
 
         <TextView
-            android:layout_width="135dp"
+            android:layout_width="199dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="6dp"
             android:layout_weight="1"
-            android:padding="12dp"
+            android:padding="1dp"
             android:text="Convenios"
             android:textColor="@color/black" />
 
     </LinearLayout>
     <LinearLayout
+        android:paddingTop="15dp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:paddingLeft="15dp"
         android:onClick="ClickSolAlumnos"
         >
 
@@ -96,24 +103,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="1dp"
-            android:rotation="180"
+            android:rotation="0"
             android:src="@drawable/ic_sol_alu" />
 
         <TextView
             android:layout_width="199dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="6dp"
             android:layout_weight="1"
-            android:padding="12dp"
+            android:padding="1dp"
             android:text="Solicitudes Alumnos"
             android:textColor="@color/black" />
 
     </LinearLayout>
     <LinearLayout
+        android:paddingTop="15dp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:paddingLeft="15dp"
         android:onClick="ClickConvo"
         >
 
@@ -127,18 +136,20 @@
         <TextView
             android:layout_width="199dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="6dp"
             android:layout_weight="1"
-            android:padding="12dp"
+            android:padding="1dp"
             android:text="Convocatorias"
             android:textColor="@color/black" />
 
     </LinearLayout>
     <LinearLayout
+        android:paddingTop="15dp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:paddingLeft="15dp"
         android:onClick="ClickSolDoc"
         >
 
@@ -152,9 +163,9 @@
         <TextView
             android:layout_width="199dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="6dp"
             android:layout_weight="1"
-            android:padding="12dp"
+            android:padding="1dp"
             android:text="Solicitudes Docentes"
             android:textColor="@color/black" />
 
@@ -162,7 +173,7 @@
 
 <LinearLayout
     android:layout_width="wrap_content"
-    android:layout_height="160dp"></LinearLayout>
+    android:layout_height="220dp"></LinearLayout>
     <LinearLayout
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -174,12 +185,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="1dp"
-            android:src="@drawable/ic_logout" />
+            android:paddingLeft="15dp"
+            android:src="@drawable/ic_logout1" />
 
         <TextView
             android:layout_width="237dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="1dp"
             android:layout_weight="1"
             android:padding="12dp"
             android:text="Logout"
