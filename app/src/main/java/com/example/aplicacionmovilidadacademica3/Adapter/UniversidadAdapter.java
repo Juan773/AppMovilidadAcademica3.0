@@ -1,5 +1,6 @@
 package com.example.aplicacionmovilidadacademica3.Adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,13 +23,19 @@ public class UniversidadAdapter extends RecyclerView.Adapter<UniversidadAdapter.
 
     private Context uContext;
     private List<Universidad> universidadList;
+    private VacanteAdapter.OnItemClickListener mListener;
 
 
     public UniversidadAdapter(Context uContext, List<Universidad> universidadList) {
         this.uContext = uContext;
         this.universidadList = universidadList;
     }
-
+    public interface OnItemClickListener{
+        void OnItemClick(int position);
+    }
+    public void setOnItemClickListener(VacanteAdapter.OnItemClickListener listener){
+        mListener = listener;
+    }
     @NonNull
     @Override
     public UniversidadViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
@@ -42,12 +49,45 @@ public class UniversidadAdapter extends RecyclerView.Adapter<UniversidadAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull UniversidadViewHolder holder, int position) {
+        Universidad universidad = universidadList.get(position);
+        String imagenUrl = universidad.getImagen();
+        String dir = universidad.getDireccion();
+        String nomuni = universidad.getNombre();
+        String pais = universidad.getPais();
+        String totvac = universidad.getTotalvacantes();
+          holder.direccion.setText(dir);
+          holder.nombreuni.setText(nomuni);
+          holder.pais.setText(pais);
+        Glide.with(uContext).load(imagenUrl).into(holder.imgu);
+        holder.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder= new AlertDialog.Builder(v.getRootView().getContext());
+                View dialogView = LayoutInflater.from(v.getRootView().getContext()).inflate(R.layout.convenio_detalle,null);
+                ImageView image_detalle_vac1;
+                TextView tv_detalle_uni1;
+                TextView tv_fechaini1;
+                TextView tv_fechafin1;
+                TextView tv_contacto1;
+                image_detalle_vac1=dialogView.findViewById(R.id.image_detalle_vac);
+                tv_detalle_uni1=dialogView.findViewById(R.id.tv_detalle_uni);
+                tv_fechaini1=dialogView.findViewById(R.id.tv_fechaini);
+                tv_fechafin1=dialogView.findViewById(R.id.tv_fechafin);
+                tv_contacto1=dialogView.findViewById(R.id.tv_contacto);
+                Glide.with(uContext).load(universidad.getImagen()).into(image_detalle_vac1);
+                tv_detalle_uni1.setText(universidad.getDireccion());
+                tv_fechaini1.setText(universidad.getNombre());
+                tv_fechafin1.setText(universidad.getPais());
+                tv_contacto1.setText(universidad.getTotalvacantes());
 
-          holder.direccion.setText(universidadList.get(position).getDireccion());
-          holder.nombreuni.setText(universidadList.get(position).getNombre());
-          holder.pais.setText(universidadList.get(position).getPais());
+                builder.setView(dialogView);
+                builder.setCancelable(true);
+                builder.show();
 
-        Glide.with(uContext).asBitmap().load(universidadList.get(position).getImagen()).into(holder.imgu);
+
+            }
+        });
+
 
     }
 
@@ -62,6 +102,8 @@ public class UniversidadAdapter extends RecyclerView.Adapter<UniversidadAdapter.
         TextView nombreuni;
         TextView direccion;
         TextView pais;
+        ImageView button;
+
 
         public UniversidadViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -69,7 +111,17 @@ public class UniversidadAdapter extends RecyclerView.Adapter<UniversidadAdapter.
             nombreuni = itemView.findViewById(R.id.tv_nombreuni);
             direccion = itemView.findViewById(R.id.tv_direccion);
             pais = itemView.findViewById(R.id.tv_pais);
-
+            button = itemView.findViewById(R.id.detalleboton);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(mListener != null){
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION);
+                        mListener.OnItemClick(position);
+                    }
+                }
+            });
 
 
         }

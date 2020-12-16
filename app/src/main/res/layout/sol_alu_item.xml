@@ -34,17 +34,17 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:paddingTop="24dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-
+      >
             <TextView
                 android:id="@+id/tv_nombresolalu"
-                android:layout_width="wrap_content"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="1dp"
                 android:ellipsize="end"
+
                 android:maxLines="2"
                 android:padding="5dp"
                 android:text="This is a sample news title which has no intent"
@@ -52,9 +52,24 @@
                 android:textStyle="bold" />
 
 
+            <ImageView
+                android:id="@+id/detalleboton"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:padding="1dp"
+
+                android:paddingTop="5dp"
+                android:src="@drawable/ic_baseline_navigate_next_24"
+                android:textAlignment="viewEnd" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+
 
 
         </LinearLayout>

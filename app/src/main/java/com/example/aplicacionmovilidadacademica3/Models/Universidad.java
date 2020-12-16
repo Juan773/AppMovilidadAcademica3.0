@@ -8,10 +8,10 @@ public class Universidad implements Serializable {
     private String direccion;
     private String nombre;
     private String pais;
-    private Number totalvacantes;
+    private String totalvacantes;
     private String imagen;
 
-    public Universidad(Number iduniversidad, String direccion, String nombre, String pais, Number totalvacantes, String imagen) {
+    public Universidad(Number iduniversidad, String direccion, String nombre, String pais, String totalvacantes, String imagen) {
         this.iduniversidad = iduniversidad;
         this.direccion = direccion;
         this.nombre = nombre;
@@ -52,11 +52,11 @@ public class Universidad implements Serializable {
         this.pais = pais;
     }
 
-    public Number getTotalvacantes() {
+    public String getTotalvacantes() {
         return totalvacantes;
     }
 
-    public void setTotalvacantes(Number totalvacantes) {
+    public void setTotalvacantes(String totalvacantes) {
         this.totalvacantes = totalvacantes;
     }
 

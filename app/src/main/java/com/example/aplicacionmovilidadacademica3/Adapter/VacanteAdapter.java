@@ -2,15 +2,10 @@ package com.example.aplicacionmovilidadacademica3.Adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.media.TimedText;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.aplicacionmovilidadacademica3.Models.Vacante;
 import com.example.aplicacionmovilidadacademica3.R;
-import com.example.aplicacionmovilidadacademica3.VacanteDetalle;
 
 import java.util.List;
 
@@ -72,7 +66,7 @@ public class VacanteAdapter extends RecyclerView.Adapter<VacanteAdapter.VacanteV
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder= new AlertDialog.Builder(v.getRootView().getContext());
-                View dialogView = LayoutInflater.from(v.getRootView().getContext()).inflate(R.layout.activity_vacante_detalle,null);
+                View dialogView = LayoutInflater.from(v.getRootView().getContext()).inflate(R.layout.vacante_detalle,null);
                 ImageView image_detalle_vac1;
                 TextView tv_detalle_uni1;
                 TextView tv_fechaini1;

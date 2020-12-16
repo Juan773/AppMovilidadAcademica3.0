@@ -17,13 +17,25 @@
         layout="@layout/main_toolbar"/>
 
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Home"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:gravity="center"/>
+        android:background="@drawable/fondo"
+        tools:context=".Menu_main">
+
+        <ImageButton
+            android:id="@+id/imageButtonVac5"
+            android:layout_width="152dp"
+            android:layout_height="137dp"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="148dp"
+            android:background="#0000"
+            android:src="@drawable/c1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
 
     <RelativeLayout
