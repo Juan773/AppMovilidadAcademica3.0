@@ -1,4 +1,4 @@
-package com.example.aplicacionmovilidadacademica3;
+package com.example.aplicacionmovilidadacademica3.Vista;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -12,7 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.aplicacionmovilidadacademica3.Models.Solicitud_Alumno;
+import com.example.aplicacionmovilidadacademica3.R;
 
 public class Menu extends AppCompatActivity {
      DrawerLayout drawerLayout;

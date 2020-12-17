@@ -1,4 +1,4 @@
-package com.example.aplicacionmovilidadacademica3.Interfaces;
+package com.example.aplicacionmovilidadacademica3.Presentador.Adapter.Interfaces;
 
 import com.example.aplicacionmovilidadacademica3.Models.Solicitud_Alumno;
 

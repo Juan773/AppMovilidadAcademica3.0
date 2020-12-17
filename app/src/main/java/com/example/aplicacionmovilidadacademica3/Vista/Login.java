@@ -1,4 +1,4 @@
-package com.example.aplicacionmovilidadacademica3;
+package com.example.aplicacionmovilidadacademica3.Vista;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,18 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.aplicacionmovilidadacademica3.Interfaces.UniversidadService;
-import com.example.aplicacionmovilidadacademica3.Models.Universidad;
+import com.example.aplicacionmovilidadacademica3.Presentador.Adapter.Interfaces.UniversidadService;
+import com.example.aplicacionmovilidadacademica3.R;
 import com.example.aplicacionmovilidadacademica3.TokenReceive.api.WebServiceOauth;
 import com.example.aplicacionmovilidadacademica3.TokenReceive.api.WebServiceOauthApi;
 import com.example.aplicacionmovilidadacademica3.TokenReceive.model.Token;
 import com.example.aplicacionmovilidadacademica3.TokenReceive.share_pref.TokenManager;
-
-import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;

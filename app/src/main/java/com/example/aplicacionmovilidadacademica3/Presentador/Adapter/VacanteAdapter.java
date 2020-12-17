@@ -1,4 +1,4 @@
-package com.example.aplicacionmovilidadacademica3.Adapter;
+package com.example.aplicacionmovilidadacademica3.Presentador.Adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;

@@ -1,4 +1,4 @@
- package com.example.aplicacionmovilidadacademica3;
+ package com.example.aplicacionmovilidadacademica3.Vista;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -13,9 +13,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-import com.example.aplicacionmovilidadacademica3.Adapter.VacanteAdapter;
-import com.example.aplicacionmovilidadacademica3.Interfaces.VacanteService;
+import com.example.aplicacionmovilidadacademica3.Presentador.Adapter.VacanteAdapter;
+import com.example.aplicacionmovilidadacademica3.Presentador.Adapter.Interfaces.VacanteService;
 import com.example.aplicacionmovilidadacademica3.Models.Vacante;
+import com.example.aplicacionmovilidadacademica3.R;
 import com.example.aplicacionmovilidadacademica3.TokenReceive.api.WebServiceOauth;
 import com.example.aplicacionmovilidadacademica3.TokenReceive.share_pref.TokenManager;
 
@@ -32,7 +33,7 @@ import retrofit2.Response;
      RecyclerView recyclerView;
      List<Vacante> vacanteList;
     DrawerLayout drawerLayout;
-     private static final String BASE_URL = "http://192.168.0.101:8888";
+     private static final String BASE_URL = "http://3.101.142.22:8888/";
      private OkHttpClient.Builder httpClientBuilder;
      private TokenManager tokenManager;
 private TextView tv_prueba;
@@ -70,7 +71,7 @@ private TextView tv_prueba;
      public void ClickHome (View view){ Menu.redirectActivity(this, Menu.class);
 
      }
-     public void ClickConvo(View view) { redirectActivity(this,Convocatorias.class);}
+     public void ClickConvo(View view) { redirectActivity(this, Convocatorias.class);}
      public void ClickSolAlumnos(View view ){ redirectActivity(this,Solicitudes_Alumnos.class);}
      public void ClickVacantes (View view){
 

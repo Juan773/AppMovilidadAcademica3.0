@@ -1,4 +1,4 @@
-package com.example.aplicacionmovilidadacademica3;
+package com.example.aplicacionmovilidadacademica3.Vista;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -10,9 +10,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.aplicacionmovilidadacademica3.Adapter.UniversidadAdapter;
-import com.example.aplicacionmovilidadacademica3.Interfaces.UniversidadService;
+import com.example.aplicacionmovilidadacademica3.Presentador.Adapter.UniversidadAdapter;
+import com.example.aplicacionmovilidadacademica3.Presentador.Adapter.Interfaces.UniversidadService;
 import com.example.aplicacionmovilidadacademica3.Models.Universidad;
+import com.example.aplicacionmovilidadacademica3.R;
 import com.example.aplicacionmovilidadacademica3.TokenReceive.api.WebServiceOauth;
 import com.example.aplicacionmovilidadacademica3.TokenReceive.share_pref.TokenManager;
 
@@ -27,7 +28,7 @@ import retrofit2.Response;
 public class Universidades extends AppCompatActivity {
     RecyclerView recyclerView;
     DrawerLayout drawerLayout;
-    private static final String BASE_URL = "http://192.168.0.101:8888";
+    private static final String BASE_URL = "http://3.101.142.22:8888/";
     private OkHttpClient.Builder httpClientBuilder;
     List<Universidad> universidadList;
     private TokenManager tokenManager;

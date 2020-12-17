@@ -1,4 +1,4 @@
-package com.example.aplicacionmovilidadacademica3;
+package com.example.aplicacionmovilidadacademica3.Vista;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import android.widget.ImageView;
+
+import com.example.aplicacionmovilidadacademica3.R;
 
 public class Requisito extends AppCompatActivity {
     DrawerLayout drawerLayout;

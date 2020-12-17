@@ -1,4 +1,4 @@
-package com.example.aplicacionmovilidadacademica3;
+package com.example.aplicacionmovilidadacademica3.Vista;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -10,10 +10,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.aplicacionmovilidadacademica3.Adapter.Solicitud_AlumnoAdapter;
-import com.example.aplicacionmovilidadacademica3.Adapter.Solicitud_DocenteAdapter;
-import com.example.aplicacionmovilidadacademica3.Interfaces.Solicitudes_DocenteService;
+import com.example.aplicacionmovilidadacademica3.Presentador.Adapter.Solicitud_DocenteAdapter;
+import com.example.aplicacionmovilidadacademica3.Presentador.Adapter.Interfaces.Solicitudes_DocenteService;
 import com.example.aplicacionmovilidadacademica3.Models.Solicitud_Docente;
+import com.example.aplicacionmovilidadacademica3.R;
 import com.example.aplicacionmovilidadacademica3.TokenReceive.api.WebServiceOauth;
 import com.example.aplicacionmovilidadacademica3.TokenReceive.share_pref.TokenManager;
 
@@ -29,7 +29,7 @@ public class Solicitudes_Docentes extends AppCompatActivity {
     DrawerLayout drawerLayout;
     List<Solicitud_Docente> solicitud_docenteList;
     RecyclerView recyclerView;
-    private static final String BASE_URL = "http://192.168.0.101:8888";
+    private static final String BASE_URL = "http://3.101.142.22:8888/";
     private OkHttpClient.Builder httpClientBuilder;
     private TokenManager tokenManager;
     @Override
@@ -60,7 +60,7 @@ public class Solicitudes_Docentes extends AppCompatActivity {
     public void ClickHome (View view){ Menu.redirectActivity(this, Menu.class);
 
     }
-    public void ClickConvo(View view) { redirectActivity(this,Convocatorias.class);}
+    public void ClickConvo(View view) { redirectActivity(this, Convocatorias.class);}
     public void ClickSolAlumnos(View view ){   redirectActivity(this,Solicitudes_Alumnos.class);}
     public void ClickVacantes (View view){ redirectActivity(this,Vacantes.class);
 

@@ -14,21 +14,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AplicacionMovilidadAcademica3"
         android:usesCleartextTraffic="true">
-        <activity android:name=".testttt" />
-        <activity android:name=".Requisito" />
-        <activity android:name=".Solicitudes_Docentes" />
-        <activity android:name=".Convocatorias" />
-        <activity android:name=".Solicitudes_Alumnos" />
-        <activity android:name=".Login">
+        <activity android:name=".Vista.Requisito" />
+        <activity android:name=".Vista.Solicitudes_Docentes" />
+        <activity android:name=".Vista.Convocatorias" />
+        <activity android:name=".Vista.Solicitudes_Alumnos" />
+        <activity android:name=".Vista.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Universidades" />
-        <activity android:name=".Vacantes" />
-        <activity android:name=".Menu" />
+        <activity android:name=".Vista.Universidades" />
+        <activity android:name=".Vista.Vacantes" />
+        <activity android:name=".Vista.Menu" />
     </application>
 
 </manifest>

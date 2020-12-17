@@ -1,4 +1,4 @@
-package com.example.aplicacionmovilidadacademica3;
+package com.example.aplicacionmovilidadacademica3.Vista;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -12,13 +12,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.SearchView;
 
-import com.example.aplicacionmovilidadacademica3.Adapter.ConvocatoriaAdapter;
-import com.example.aplicacionmovilidadacademica3.Adapter.VacanteAdapter;
-import com.example.aplicacionmovilidadacademica3.Interfaces.ConvocatoriaService;
+import com.example.aplicacionmovilidadacademica3.Presentador.Adapter.ConvocatoriaAdapter;
+import com.example.aplicacionmovilidadacademica3.Presentador.Adapter.Interfaces.ConvocatoriaService;
 import com.example.aplicacionmovilidadacademica3.Models.Convocatoria;
+import com.example.aplicacionmovilidadacademica3.R;
 import com.example.aplicacionmovilidadacademica3.TokenReceive.api.WebServiceOauth;
 import com.example.aplicacionmovilidadacademica3.TokenReceive.share_pref.TokenManager;
 
@@ -36,7 +34,7 @@ public class Convocatorias extends AppCompatActivity {
 
     List<Convocatoria> convocatoriaList;
 
-    private static final String BASE_URL = "http://192.168.0.101:8888";
+    private static final String BASE_URL = "http://3.101.142.22:8888/";
     private OkHttpClient.Builder httpClientBuilder;
     private TokenManager tokenManager;
     @Override
@@ -93,11 +91,11 @@ public class Convocatorias extends AppCompatActivity {
     public void ClickConvenios(View view){
         redirectActivity(this, Universidades.class);
     }
-    public void ClickSolAlumnos(View view ){ redirectActivity(this,Solicitudes_Alumnos.class);}
+    public void ClickSolAlumnos(View view ){ redirectActivity(this, Solicitudes_Alumnos.class);}
     public void ClickLogout(View view){
         logout(this);
     }
-    public void ClickSolDoc(View view){ redirectActivity(this,Solicitudes_Docentes.class);
+    public void ClickSolDoc(View view){ redirectActivity(this, Solicitudes_Docentes.class);
     }
 
     public static void logout(Activity activity) {

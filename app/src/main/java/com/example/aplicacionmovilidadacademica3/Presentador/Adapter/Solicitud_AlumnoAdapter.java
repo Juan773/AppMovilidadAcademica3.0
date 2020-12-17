@@ -1,4 +1,4 @@
-package com.example.aplicacionmovilidadacademica3.Adapter;
+package com.example.aplicacionmovilidadacademica3.Presentador.Adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -13,8 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.aplicacionmovilidadacademica3.Models.Solicitud_Alumno;
-import com.example.aplicacionmovilidadacademica3.Models.Solicitud_Docente;
-import com.example.aplicacionmovilidadacademica3.Models.Vacante;
 import com.example.aplicacionmovilidadacademica3.R;
 
 import java.util.List;

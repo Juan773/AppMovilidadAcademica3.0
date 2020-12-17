@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
     android:background="@drawable/fondo"
-    tools:context=".Solicitudes_Alumnos">
+    tools:context=".Vista.Solicitudes_Alumnos">
 
     <LinearLayout
         android:layout_width="match_parent"

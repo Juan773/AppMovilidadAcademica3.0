@@ -9,8 +9,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class WebServiceOauth {
-
-    private static final String BASE_URL = "http://192.168.0.101:8888";
+    private static final String BASE_URL = "http://3.101.142.22:8888/";
     private static HttpLoggingInterceptor loggingInterceptor;
     private Retrofit retrofit;
     private OkHttpClient.Builder httpClientBuilder;
