@@ -11,10 +11,12 @@
         android:id="@+id/image_detalle_vac"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="10dp"
         android:src="@mipmap/ic_launcher"
         app:layout_constraintBottom_toTopOf="@+id/tv_detalle_uni"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_detalle_uni"

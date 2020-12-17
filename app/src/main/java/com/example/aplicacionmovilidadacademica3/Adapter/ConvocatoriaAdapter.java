@@ -2,6 +2,7 @@ package com.example.aplicacionmovilidadacademica3.Adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,12 +16,17 @@ import com.bumptech.glide.Glide;
 import com.example.aplicacionmovilidadacademica3.Models.Convocatoria;
 import com.example.aplicacionmovilidadacademica3.R;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.stream.Collectors;
 
 public class ConvocatoriaAdapter extends RecyclerView.Adapter<ConvocatoriaAdapter.ConvocatoriaViewHolder> {
     private Context cContext;
     private List<Convocatoria> convocatoriaList;
+
     private VacanteAdapter.OnItemClickListener mListener;
+
 
     public interface OnItemClickListener{
         void OnItemClick(int position);
@@ -31,6 +37,7 @@ public class ConvocatoriaAdapter extends RecyclerView.Adapter<ConvocatoriaAdapte
     public ConvocatoriaAdapter(Context cContext, List<Convocatoria> convocatoriaList) {
         this.cContext = cContext;
         this.convocatoriaList = convocatoriaList;
+
     }
 
     @NonNull
@@ -83,8 +90,12 @@ holder.button.setOnClickListener(new View.OnClickListener() {
 
     @Override
     public int getItemCount() {
+
+
         return convocatoriaList.size();
     }
+
+
     public  class ConvocatoriaViewHolder extends RecyclerView.ViewHolder{
         TextView  tv_nombrecon1;
         TextView tv_fechainicio1;
@@ -115,4 +126,5 @@ holder.button.setOnClickListener(new View.OnClickListener() {
             });
         }
     }
+
 }

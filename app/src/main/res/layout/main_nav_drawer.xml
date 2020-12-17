@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:paddingBottom="10dp"
-        android:text="alejo"
+        android:text="Alejandro Gutierrez Beltran"
         android:textAlignment="center"
         android:textColor="#FFFF"
         android:textSize="13sp"

@@ -12,8 +12,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.SearchView;
 
 import com.example.aplicacionmovilidadacademica3.Adapter.ConvocatoriaAdapter;
+import com.example.aplicacionmovilidadacademica3.Adapter.VacanteAdapter;
 import com.example.aplicacionmovilidadacademica3.Interfaces.ConvocatoriaService;
 import com.example.aplicacionmovilidadacademica3.Models.Convocatoria;
 import com.example.aplicacionmovilidadacademica3.TokenReceive.api.WebServiceOauth;
@@ -28,22 +31,31 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Convocatorias extends AppCompatActivity {
-    DrawerLayout drawerLayout;
-    List<Convocatoria> convocatoriaList;
     RecyclerView recyclerView;
+    DrawerLayout drawerLayout;
+
+    List<Convocatoria> convocatoriaList;
+
     private static final String BASE_URL = "http://192.168.0.101:8888";
     private OkHttpClient.Builder httpClientBuilder;
     private TokenManager tokenManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_convocatorias);
         drawerLayout = findViewById(R.id.drawer_layout);
         recyclerView = findViewById(R.id.convo_recycler_view);
         convocatoriaList = new ArrayList<>();
         setUpView();
 
+
+
     }
+
+
+
 
     private void setUpView() {
         tokenManager = TokenManager.getInstance(getSharedPreferences(TokenManager.SHARED_PREFERENCES, MODE_PRIVATE));
@@ -153,4 +165,7 @@ public class Convocatorias extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(convocatoriaAdapter);
     }
+
+
+
 }

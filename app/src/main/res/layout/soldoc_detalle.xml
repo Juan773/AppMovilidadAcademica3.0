@@ -46,35 +46,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_detalle_doc" />
 
+
     <ImageView
-        android:id="@+id/imageView26"
+        android:id="@+id/btn_soli"
         android:layout_width="301dp"
         android:layout_height="39dp"
-        android:layout_marginTop="24dp"
+        android:layout_below="@+id/botondoc"
+        android:layout_marginTop="8dp"
         android:background="#FFFFFF"
 
-        android:src="@drawable/rect_ngulo_3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_detalle_uni_doc" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:text="Solicitud MAD"
-        android:textColor="@color/black"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView26"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView26"
-        app:layout_constraintTop_toTopOf="@+id/imageView26"
-        app:layout_constraintVertical_bias="0.526" />
-
     <ImageView
-        android:id="@+id/asd"
+        android:id="@+id/btn_carta"
         android:layout_width="301dp"
         android:layout_height="39dp"
         android:layout_marginTop="28dp"
@@ -84,26 +70,38 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView26"
+        app:layout_constraintTop_toBottomOf="@+id/btn_soli"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/ddd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="Carta de Motivacion MAD"
         android:textColor="@color/black"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/asd"
-        app:layout_constraintEnd_toStartOf="@+id/imageView8"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/asd"
-        app:layout_constraintTop_toTopOf="@+id/asd"
+        app:layout_constraintStart_toStartOf="@+id/btn_carta"
+        app:layout_constraintTop_toTopOf="@+id/btn_carta"
         app:layout_constraintVertical_bias="0.526" />
 
+    <TextView
+        android:id="@+id/ddd3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Solicitud MAD"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_soli"
+        app:layout_constraintStart_toStartOf="@+id/btn_soli"
+        app:layout_constraintTop_toTopOf="@+id/btn_soli"
+        app:layout_constraintVertical_bias="0.578" />
+
     <ImageView
-        android:id="@+id/eee"
+        android:id="@+id/btn_cv"
         android:layout_width="301dp"
         android:layout_height="39dp"
 
@@ -112,7 +110,7 @@
         android:src="@drawable/rect_ngulo_3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/asd" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_carta" />
 
     <TextView
         android:id="@+id/fff"
@@ -122,50 +120,46 @@
         android:text="Curriculum Vitae"
         android:textColor="@color/black"
         android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/eee"
-        app:layout_constraintEnd_toStartOf="@+id/imageView5"
-        app:layout_constraintHorizontal_bias="0.173"
-        app:layout_constraintStart_toStartOf="@+id/eee"
-        app:layout_constraintTop_toTopOf="@+id/eee"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_cv"
+        app:layout_constraintStart_toStartOf="@+id/btn_cv"
+        app:layout_constraintTop_toTopOf="@+id/btn_cv"
         app:layout_constraintVertical_bias="0.421" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/botondoc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="156dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView26"
-        app:layout_constraintEnd_toEndOf="@+id/imageView26"
-        app:layout_constraintTop_toTopOf="@+id/imageView26"
-        app:layout_constraintVertical_bias="0.4"
-        app:srcCompat="@drawable/ic_baseline_visibility_24"
-        tools:visibility="visible" />
+        android:layout_marginEnd="16dp"
+
+        android:src="@drawable/ic_baseline_visibility_24"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_soli"
+        app:layout_constraintEnd_toEndOf="@+id/btn_soli"
+        app:layout_constraintTop_toTopOf="@+id/btn_soli"
+        app:layout_constraintVertical_bias="0.6" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/botondoc2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="136dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/eee"
-        app:layout_constraintEnd_toEndOf="@+id/eee"
-        app:layout_constraintTop_toTopOf="@+id/eee"
-        app:layout_constraintVertical_bias="0.533"
-        app:srcCompat="@drawable/ic_baseline_visibility_24"
-        tools:visibility="visible" />
+
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_baseline_visibility_24"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_carta"
+        app:layout_constraintEnd_toEndOf="@+id/btn_carta"
+        app:layout_constraintTop_toTopOf="@+id/btn_carta"
+        app:layout_constraintVertical_bias="0.533" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/botondoc3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="84dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/asd"
-        app:layout_constraintEnd_toEndOf="@+id/asd"
-        app:layout_constraintTop_toTopOf="@+id/asd"
-        app:layout_constraintVertical_bias="0.666"
-        app:srcCompat="@drawable/ic_baseline_visibility_24"
-        tools:visibility="visible" />
+
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_baseline_visibility_24"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_cv"
+        app:layout_constraintEnd_toEndOf="@+id/btn_cv"
+        app:layout_constraintTop_toTopOf="@+id/btn_cv"
+        app:layout_constraintVertical_bias="0.533" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
