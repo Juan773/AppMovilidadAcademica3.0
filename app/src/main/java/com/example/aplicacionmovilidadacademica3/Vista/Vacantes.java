@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.example.aplicacionmovilidadacademica3.Presentador.Adapter.VacanteAdapter;
@@ -63,6 +64,10 @@ private TextView tv_prueba;
     public void ClickMenu(View view){
         Menu.openDrawer(drawerLayout);
 
+     }
+     @Override
+     public void onBackPressed() {
+         Toast.makeText(Vacantes.this,"",Toast.LENGTH_LONG).show();
      }
 
      public  void ClickLogo(View view){

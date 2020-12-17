@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.aplicacionmovilidadacademica3.Presentador.Adapter.UniversidadAdapter;
 import com.example.aplicacionmovilidadacademica3.Presentador.Adapter.Interfaces.UniversidadService;
@@ -46,7 +47,10 @@ public class Universidades extends AppCompatActivity {
         tokenManager = TokenManager.getInstance(getSharedPreferences(TokenManager.SHARED_PREFERENCES, MODE_PRIVATE));
         getUniversidad();
     }
-
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(Universidades.this,"",Toast.LENGTH_LONG).show();
+    }
     public void ClickMenu(View view){
         Menu.openDrawer(drawerLayout);
 

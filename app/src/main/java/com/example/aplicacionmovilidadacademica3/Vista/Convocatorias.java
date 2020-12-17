@@ -12,6 +12,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.aplicacionmovilidadacademica3.Presentador.Adapter.ConvocatoriaAdapter;
 import com.example.aplicacionmovilidadacademica3.Presentador.Adapter.Interfaces.ConvocatoriaService;
@@ -51,7 +52,10 @@ public class Convocatorias extends AppCompatActivity {
 
 
     }
-
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(Convocatorias.this,"",Toast.LENGTH_LONG).show();
+    }
 
 
 

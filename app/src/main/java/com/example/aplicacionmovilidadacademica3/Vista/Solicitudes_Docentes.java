@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.aplicacionmovilidadacademica3.Presentador.Adapter.Solicitud_DocenteAdapter;
 import com.example.aplicacionmovilidadacademica3.Presentador.Adapter.Interfaces.Solicitudes_DocenteService;
@@ -46,7 +47,10 @@ public class Solicitudes_Docentes extends AppCompatActivity {
         tokenManager = TokenManager.getInstance(getSharedPreferences(TokenManager.SHARED_PREFERENCES, MODE_PRIVATE));
         getSolicitud_docente();
     }
-
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(Solicitudes_Docentes.this,"",Toast.LENGTH_LONG).show();
+    }
 
 
     public void ClickMenu(View view){

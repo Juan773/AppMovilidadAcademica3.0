@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.aplicacionmovilidadacademica3.R;
 
@@ -136,5 +137,10 @@ public class Menu extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         closeDrawer(drawerLayout);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(Menu.this,"",Toast.LENGTH_LONG).show();
     }
 }

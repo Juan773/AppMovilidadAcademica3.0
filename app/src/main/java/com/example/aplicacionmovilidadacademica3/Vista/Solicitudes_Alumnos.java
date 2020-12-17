@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.aplicacionmovilidadacademica3.Presentador.Adapter.Solicitud_AlumnoAdapter;
 import com.example.aplicacionmovilidadacademica3.Presentador.Adapter.Interfaces.Solicitudes_AlumnosService;
@@ -41,6 +42,10 @@ public class Solicitudes_Alumnos extends AppCompatActivity {
         recyclerView = findViewById(R.id.sol_alu_recycler_view);
         solicitud_alumnoList = new ArrayList<>();
         setUpView();
+    }
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(Solicitudes_Alumnos.this,"",Toast.LENGTH_LONG).show();
     }
 
     private void setUpView() {
